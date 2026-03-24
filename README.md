@@ -1,51 +1,168 @@
 # Churn Prediction & Retention Platform
 
 ## Overview
-This project is an API-first but GUI visualized churn prediction and marketing retention platform designed to help marketing and product teams identify at-risk users, understand churn drivers, and trigger targeted retention actions.
 
-The goal is not just to train a machine learning model, but to design a
-practical system that can be used by product, operations, and customer success teams
-to identify at-risk users and take retention actions.
+This project is an **API-first churn prediction and marketing retention platform** designed to help product, marketing, and CRM systems:
+
+- Identify at-risk users early  
+- Understand *why* users are likely to churn  
+- Trigger targeted, actionable retention strategies  
+
+The goal is not just to build a model, but to design a **production-style decision system** that bridges:
+
+> **Data → Prediction → Explanation → Action → Integration**
+
+---
 
 ## Problem Statement
-Marketing teams often lack actionable insights on which users are likely to churn and why, resulting in ineffective blanket campaigns and revenue loss.
+
+Marketing teams often operate with:
+
+- Limited visibility into churn risk  
+- No clear understanding of *why* users churn  
+- Inefficient, blanket retention campaigns  
+
+This results in:
+- Poor targeting  
+- Wasted spend  
+- Missed retention opportunities  
+
+---
 
 ## Solution
-This platform predicts churn risk, explains the drivers behind churn, and recommends targeted retention actions via documented APIs. A Streamlit UI consumes these APIs for visualization and demo purposes.
+
+This project builds a **churn intelligence platform** that:
+
+- Predicts churn risk using historical behavior  
+- Explains key drivers of churn (model explainability)  
+- Maps predictions to **actionable retention strategies**  
+- Exposes functionality via **APIs for integration with CRM and marketing systems**  
+- Provides a **Streamlit UI** as a thin visualization layer  
+
+---
 
 ## Target Users
-- Marketing & Growth Teams
-- CRM Systems
-- Product Managers
 
-## Key Features (Planned)
-- Churn prediction (real-time and batch)
-- Explainable churn drivers
-- Retention action recommendations
-- API-first architecture (FastAPI)
-- Streamlit UI as API consumer
+- Marketing & Growth Teams  
+- CRM / Campaign Systems  
+- Product Managers  
+- Data & Analytics Teams  
 
-## Dataset (In 2 Phases)
-- KKBox's Churn Dataset (https://www.kaggle.com/competitions/kkbox-churn-prediction-challenge/data)
-- eCommerce behavior data from multi category store (https://www.kaggle.com/datasets/mkechinov/ecommerce-behavior-data-from-multi-category-store
+---
+
+## Dataset
+
+Primary dataset:
+- **KKBox Churn Dataset**
+
+Includes:
+- transactions.csv — subscription activity  
+- user_logs.csv — engagement behavior  
+- members.csv — user metadata  
+
+---
 
 ## Tools & Technologies
-- Python (pandas, numpy, seaborn, matplotlib)
-- Tableau (visual exploratory analysis)
-- Jupyter Notebook
+
+- Python (pandas, numpy, scikit-learn, SHAP)  
+- DuckDB (large-scale feature aggregation)  
+- Jupyter Notebook  
+- FastAPI (planned)  
+- Streamlit (planned)  
+
+---
+
+## Project Evolution
+
+### Week 1–2: Data Understanding
+- EDA, cleaning, anomaly detection  
+- Churn label isolation  
+- Identified skew, missing values, inconsistencies  
+
+### Week 3: Baseline Modeling
+- Leakage-aware setup  
+- Logistic regression baseline  
+- ROC ≈ 0.69  
+
+### Week 4: Behavioral Integration
+- Introduced user_logs  
+- Faced scaling issues with pandas  
+- Migrated to DuckDB  
+- Built behavioral features  
+
+### Week 5: Explainability
+- Implemented SHAP  
+- Identified churn drivers  
+- Translated predictions to actions  
+
+---
+
+## Evolution Summary
+
+| Stage | Capability |
+|------|----------|
+| Week 1–2 | Data understanding |
+| Week 3 | Baseline prediction |
+| Week 4 | Behavioral modeling |
+| Week 5 | Actionable insights |
+
+---
+
+## Current Capabilities
+
+- Predict churn  
+- Explain drivers  
+- Suggest retention actions  
+
+---
+
+## Limitations
+
+- No real-time API yet  
+- No A/B testing  
+- Rule-based strategies  
+
+---
+
+## Phase 2 Roadmap
+
+### API System
+- FastAPI endpoints  
+- Real-time + batch scoring  
+
+### Experimentation
+- A/B testing  
+- Measure uplift  
+
+### Synthetic Data
+- Simulate interventions  
+
+### Model Improvements
+- Advanced models  
+- Feature optimization  
+
+### MLOps
+- Monitoring  
+- Drift detection  
+
+---
+
+## Key Learnings
+
+- Correctness > accuracy  
+- Data engineering is critical  
+- Explainability enables action  
+- Systems thinking is essential  
+
+---
 
 ## Status
 
-### Week 1: 
-- Project setup and 
-- Data exploration
+Week 1–5 complete  
+Moving toward production system  
 
-### Week 2:
-- Churn labels isolated and frozen
-- Transaction-based behavioral features created
-- Leakage and sanity checks completed
-- Modeling dataset v1 finalized
-- Backfill algorithm: used for transactions but not being utlized right now since we are creating baseline as of now & we can't do that if there are inferred data present along with real data - may give rise to synthetic signals: We will use backfill to investigae whether this improves our prediction or not & then decide to do this. ALternatively, the data may be some kind of marker which we don't have explanation for now & may be relvealed later as maybe - loyalities rewards or refunds. So, better to keep the data at this stage. So the process for cleaning: Model with raw data --> Measure impact --> Introduce corrections --> Validate gains
-- 
+---
 
+## Summary
 
+This project evolved into a **churn intelligence platform** combining modeling, explainability, and product thinking with a clear roadmap toward production deployment.
