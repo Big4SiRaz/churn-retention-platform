@@ -1,6 +1,13 @@
 import duckdb
 import os
 
+from services.db import con
+
+
+# -------------------------------
+# Used Previously to load data, now just a helper function to get user features
+# -------------------------------
+'''
 # Path to dataset
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -18,12 +25,14 @@ print(f"Data path: {DATA_PATH}")
 con = duckdb.connect()
 
 
+
 # LOAD ONCE INTO MEMORY
 con.execute(f"""
 CREATE OR REPLACE TABLE users AS
 SELECT * FROM '{DATA_PATH}'
 """)
 
+'''
 def get_user_features(user_id: str):
 
     query = """

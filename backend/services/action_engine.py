@@ -3,9 +3,22 @@ from config.action_config import ACTIONS
 def get_action(persona, risk, time_bucket):
 
     try:
-        return ACTIONS[risk][persona][time_bucket]
-    except:
-        return ["No Action"]
+        actions= ACTIONS[risk][persona][time_bucket]
+
+    except Exception as e:
+        actions= ["No specific action defined"]
+
+    explanation = f"""
+    Persona: {persona}
+    Risk Level: {risk}
+    Time: {time_bucket}
+
+    Actions chosen to:
+    - Reduce churn probability
+    - Address payment/engagement signals
+    """
+
+    return actions, explanation
 
 
 # -------------------------------

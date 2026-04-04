@@ -210,3 +210,12 @@ def get_time_bucket(days_to_expiry):
         return "T-2:0"
     else:
         return "T+1"
+    
+
+def get_risk_bucket(risk):
+    if risk < 0.3:
+        return "Low"
+    elif risk < 0.7:
+        return "Medium"
+    else:
+        return "High"
