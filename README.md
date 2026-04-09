@@ -239,25 +239,30 @@ These are partially handled and will be improved in future phases.
 ---
 
 ## Setup
+* Supplementary data Link:https://drive.google.com/file/d/12T-Yj-D8YwZua-OraIc2B_pywrGC2grQ/view?usp=sharing
+* The data as-is must be unzipped and placed inside: 'data\processed'
 
 1. Clone repo
 2. Install dependencies
-3. Run app script for both backend and frontend
+3. Insert unzipped Supplmentary data at correct place
+3. Run app script for both backend and frontend as described below
 
 ```
 Step 1:
-0. Go to the directory - churn-retention-platform\backend
-A. Activate backend venv
-B. Run command - uvicorn app:app --reload   
+A. Open New Terminal & Asumming being present in root directory --> ../../churn-retention-platform
+B. Go to the 'backend' directory --> cd backend
+C. Activate backend virtual environment --> venv\Scripts\Activate
+D. Run command --> uvicorn app:app --reload   
 
 Step 2:
-0. Go to the directory - churn-retention-platform\frontend
-A. Activate front venv
-B. Run command - streamlit run app.py 
+A. Open New Terminal & Asumming being present in root directory --> ../../churn-retention-platform
+B. Go to the 'backend' directory --> cd frontend
+C. Activate frontend virtual environment --> venv\Scripts\Activate
+D. Run command --> streamlit run app.py 
+E. If not redirected already, on local machine, go to --> http://localhost:8501/
 ```
 
-Supplementary data Link:https://drive.google.com/file/d/12T-Yj-D8YwZua-OraIc2B_pywrGC2grQ/view?usp=sharing
-The data as-is must be unzipped and placed inside: 'data\processed'
+
 
 ---
 
